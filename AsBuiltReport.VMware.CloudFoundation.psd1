@@ -24,16 +24,16 @@ GUID = 'e1b81cd3-52b3-4329-b93f-54527ab22412'
 Author = 'Tim Carman'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+# CompanyName = 'Unknown'
 
 # Copyright statement for this module
 Copyright = '(c) 2022 Tim Carman. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'A PowerShell module to generate an as built report on the configuration of VMware CloudFoundation.'
+Description = 'A PowerShell module to generate an as built report on the configuration of VMware Cloud Foundation.'
 
 # Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '5.1'
+# PowerShellVersion = '5.1'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
@@ -51,7 +51,16 @@ PowerShellVersion = '5.1'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @(
+    @{
+        ModuleName = 'AsBuiltReport.Core';
+        ModuleVersion = '1.3.0'
+    },
+    @{
+        ModuleName = 'PowerVCF';
+        ModuleVersion = '2.3.0'
+    }
+)
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -69,16 +78,16 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+FunctionsToExport = @('Invoke-AsBuiltReport.VMware.CloudFoundation')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+# CmdletsToExport = '*'
 
 # Variables to export from this module
-VariablesToExport = '*'
+# VariablesToExport = '*'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+# AliasesToExport = '*'
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -93,21 +102,29 @@ AliasesToExport = '*'
 PrivateData = @{
 
     PSData = @{
-
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = 'AsBuiltReport', 'Report', 'VMware', 'Cloud Foundation', 'VCF', 'Documentation', 'PScribo', 'PSEdition_Desktop', 'PSEdition_Core', 'Windows', 'MacOS', 'Linux'
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.VMware.CloudFoundation/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/AsBuiltReport/AsBuiltReport.VMware.CloudFoundation'
 
         # A URL to an icon representing this module.
-        # IconUri = ''
+        IconUri = 'https://github.com/AsBuiltReport.png'
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.VMware.CloudFoundation/master/CHANGELOG.md'
+
+        # Prerelease string of this module
+        # Prerelease = ''
+
+        # Flag to indicate whether the module requires explicit user acceptance for install/update/save
+        # RequireLicenseAcceptance = $false
+
+        # External dependent modules of this module
+        # ExternalModuleDependencies = @()
 
     } # End of PSData hashtable
 
